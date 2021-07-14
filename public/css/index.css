@@ -1,0 +1,76 @@
+.button, input[type="submit"] {
+  width:200px;
+  height:60px;
+  font-size:20px;
+  background:white;
+  color:blue;
+  border:2px solid blue;
+  border-radius:10px;
+  cursor:pointer;
+  user-select:none;
+  transition:all 0.3s ease-in-out;
+}
+input[type="submit"] {
+  width:100px;
+  height:40px;
+  font-size:17.5px;
+  border-radius:7px;
+}
+.button:hover, input[type="submit"]:hover {
+  background:blue;
+  color:white;
+}
+
+#top-description {
+  width:100%;
+  margin-bottom:50px;
+}
+#description-text-wrapper {
+  padding-top:3px;
+}
+#meet-image {
+  float:left;
+  width:45%;
+  border:3px solid dodgerblue;
+  border-radius:10px;
+  margin-left:20px;
+  margin-top:40px;
+}
+#description-text {
+  margin-top:100px;
+}
+.background-blue {
+  background:blue;
+  color:white;
+  margin-bottom:20px;
+}
+.background-blue:hover {
+  background:darkblue;
+  border-color:darkblue;
+}
+#features {
+  text-align:center;
+}
+.feature {
+  width:200px;
+  height:100px;
+  background:white;
+  color:black;
+  margin-right:30px;
+  margin-bottom:30px;
+  border-radius:10px;
+  transition:all 0.3s ease-in-out;
+  padding:50px;
+  padding-top:25px;
+  padding-bottom:60px;
+  font-size:20px;
+  display:inline-block;
+}
+.feature:hover {
+  background:#e0e0e0;
+}
+@media only screen and (max-width: 1000px) {
+  #meet-image {
+    width:90%;
+  }
+}

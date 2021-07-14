@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Meet - EasyMeet</title>
+    <link rel="stylesheet" href="/css/meet.css" />
+    <link rel="icon" href="/assets/computer.png">
+    <script src="/socket.io/socket.io.js"></script>
+    <script src="https://kit.fontawesome.com/c939d0e917.js"></script>
+    <script src="https://unpkg.com/peerjs@1.3.1/dist/peerjs.min.js"></script>
+    <script>
+      const room = "<%= room %>";
+      const user = "<%= user %>";
+      const audioOff = <%= audioOff %>;
+      const videoOff = <%= videoOff %>;
+    </script>
+  </head>
+  <body>
+  <audio id="sound"><source src="/assets/invite_alert.mp3"></audio>
+  <audio id="chat-alert"><source src="/assets/chat_alert.mp3"></audio>
+  <div class="video-name"></div>
+    <div class="header">
+      <div class="logo">
+        <div class="header-back">
+          <i class="fas fa-angle-left"></i>
+        </div>
+        <h3>Meet - EasyMeet</h2>
+      </div>
+    </div>  
+    <div class="main">  
+    <div class="main-left">
+      <div class="videos-group">
+        <div id="video-grid"></div>
+      </div>
+      <div class="options">
+        <div class="options-left">
+          <div id="muteButton" class="options-button"><i class="fa fa-microphone"></i></div>
+          <div id="stopVideo" class="options-button"><i class="fa fa-video-camera"></i></div>
+          <div id="leave" class="options-button background-red"><i class="fa fa-phone"></i></div>
+        </div>
+        <div class="options-right">
+          <div id="showChat" class="options-button"><i class="fa fa-comment"></i></div>
+          <div id="inviteButton" class="options-button"><i class="fas fa-user-plus"></i></div>
+        </div>
+      </div>
+    </div>
+    <div class="main-right">
+      <div class="main-chat_window">
+        <div id="recievers"><label style="color:white">Send to: </label><select id="dm-users"><option>Everyone</option><% for(i of allusers){ %><option id="dm_<%= i %>"><%= i %></option><% } %></select></div><br>
+          <div class="messages"></div>
+      </div>
+      <div class="main-message_container">
+        <input id="chat_message" type="text" autocomplete="off" placeholder="Type your message here...">
+        <div id="send" class="options-button">
+          <i class="fa fa-paper-plane" aria-hidden="true"></i>
+        </div>
+      </div>
+    </div>
+  </div>
+  <script src="/js/modal.js"></script>
+  <script src="/js/recieveinvite.js"></script>
+  <script src="/js/meet.js"></script>
+  <script src="/js/chat.js"></script>
+  </body>
+</html>

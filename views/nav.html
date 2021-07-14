@@ -1,0 +1,18 @@
+<% if(loggedIn) { %>
+<script src="/js/modal.js"></script>
+<script src="/socket.io/socket.io.js"></script>
+<script src="/js/recieveinvite.js"></script>
+<audio id="sound"><source src="/assets/invite_alert.mp3"></audio>
+<script>
+  const user = "<%= user %>";
+</script>
+<% } %>
+<nav>
+  <a href="/">Home</a><% if(loggedIn) { %>
+  <a href="/join">Join Meet</a>
+  <a href="/help">Help</a>
+  <a href="/logout">Logout</a><% } else { %>
+  <a href="/help">Help</a>
+  <a href="/login">Login</a>
+  <a href="/signup">Sign Up</a><% } %>
+</nav><br><br><br><br>

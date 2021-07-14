@@ -1,0 +1,33 @@
+form {
+  width:60%;
+  margin-left:20%;
+  margin-right:20%;
+}
+input, textarea {
+  font-size:15px;
+  padding:10px;
+  width:80%;
+  font-family:'Roboto';
+}
+textarea {
+  resize:vertical;
+  height:150px;
+}
+input[type="submit"] {
+  background:chartreuse;
+  border:none;
+  height:50px;
+  color:black;
+}
+input[type="submit"]:hover {
+  background:rgb(124, 243, 5);
+  cursor:pointer;
+}
+p a, p a:visited {
+  color:chartreuse;
+  text-decoration:none;
+  font-size:16px;
+}
+p a:hover, p a:active {
+  text-decoration:underline;
+}

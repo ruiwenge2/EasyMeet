@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Home - EasyMeet</title>
+    <link href="/css/style.css" rel="stylesheet">
+    <link href="/css/index.css" rel="stylesheet">
+    <link href="/assets/computer.png" rel="icon">
+    <script src="https://kit.fontawesome.com/c939d0e917.js"></script>
+  </head>
+  <body>
+    <%- include("nav.html") %>
+    <div id="top-description">
+      <img id="meet-image" src="/assets/meet.png">
+      <div id="description-text-wrapper">
+        <% if(loggedIn) { %>
+        <h1 id="description-text">Welcome, <%= user %>! EasyMeet allows you to meet with people online.<h1>
+        <button class="button background-blue" onclick="location.href = '/join'">Join Meet</button><br>
+        <button class="button" onclick="location.href = '/help'">Help Page</button>
+        <% } else { %>
+        <h1 id="description-text">EasyMeet is a simple-to-use website for video conferencing, without any downloading required. Meet in the browser.<h1>
+        <button class="button background-blue" onclick="location.href = '/signup'">Get started - It's free</button><br>
+        <button class="button" onclick="location.href = '/login'">Login</button>
+        <% } %>
+      </div>
+    </div><br><br>
+    <div id="features">
+      <h1>Features</h1>
+      <div class="feature"><h3>Chat</h3>Microphone not working? Use the chat box.</div>
+      <div class="feature"><h3>Private Messaging</h3>Choose who you want to send your messages to.</div><br>
+      <div class="feature"><h3>Inviting</h3>Invite people and have the invite instantly appear to them online.</div>
+      <div class="feature"><h3>Video/Audio</h3>Turn off your video or audio if you don't want to be seen or heard.</div>
+    </div><br><br>
+    <% if(!loggedIn) { %>
+    <h2>Use this, for free.</h2>
+    <button class="button" onclick="location.href = '/signup'">Sign Up</button><br><br>
+    <% } %>
+  </body>
+</html>

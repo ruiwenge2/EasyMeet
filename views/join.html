@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Join Meet - EasyMeet</title>
+    <link href="/css/style.css" rel="stylesheet">
+    <link href="/css/index.css" rel="stylesheet">
+    <link href="/assets/computer.png" rel="icon">
+  </head>
+  <body>
+    <%- include("nav.html") %>
+    <form action="/submitsettings" method="GET">
+      <input type="checkbox" <% if(audioOff){ %>checked <% } %>name="audioOff"><label>Turn off audio</label><br><br><input type="checkbox" <% if(videoOff){ %>checked <% } %>name="videoOff"><label>Turn off video</label><br><br>
+      <input type="submit" value="OK">
+    </form><br><br>
+    <h2>Join Meet</h2>
+    <input id="room" placeholder="Type room here" style="font-size:20px; width:200px"><br><br>
+    <button onclick="chooseRoom()" class="button">Enter room</button><br><br>
+    <button onclick="location.href = '/meet/main'" class="button">Join main meet</button><br><br>
+    <button onclick="invite()" class="button">Invite someone</button>
+    <script>
+      document.getElementById("room").addEventListener("keydown", e => {
+        if(e.key == "Enter") chooseRoom();
+      });
+      
+      function chooseRoom(){
+        var name = document.getElementById("room").value;
+        location.href = "/meet/" + name;
+      }
+
+      function invite(){
+        promptmodal("Invite someone", "Enter the name of the room first:")
+        .then(room => {
+          promptmodal("Invite someone", "Enter the user you want to invite:")
+          .then(username => {
+            socket.emit("new invitation", {to:username, from:user, room:room});
+            alertmodal("Invite someone", `You have invited ${username} to the room <span style="color:blue">${room}</span>!`)
+            .then(() => location.href = "/meet/" + room);
+          });
+        });
+      }
+    </script>
+  </body>
+</html>

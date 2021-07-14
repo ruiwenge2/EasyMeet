@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Login - EasyMeet</title>
+    <link href="/css/style.css" rel="stylesheet">
+    <link href="/css/loginsignup.css" rel="stylesheet">
+    <link href="/assets/computer.png" rel="icon">
+  </head>
+  <body>
+    <%- include("nav.html") %>
+    <h1>Login</h1><br>
+    <form action="/loginsubmit" method="post">
+      <h3>Username: <h3><input name="username" required><br><br>
+      <h3>Password: </h3><input type="password" name="password" required><br><br>
+      <input type="submit" value="Login">
+      <br><br><br>
+    </form>
+    <p>Don't have an account? <a href="/signup">Sign Up</a></p>
+  </body>
+</html>

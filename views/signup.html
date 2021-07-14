@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Sign Up - EasyMeet</title>
+    <link href="/css/style.css" rel="stylesheet">
+    <link href="/css/loginsignup.css" rel="stylesheet">
+    <link href="/assets/computer.png" rel="icon">
+    <script src="https://www.google.com/recaptcha/api.js" async defer></script>
+  </head>
+  <body>
+    <%- include("nav.html") %>
+    <h1>Sign Up</h1><br>
+    <form action="/createaccount" method="post">
+      <h3>Username: </h3><input name="newusername" required><br><br>
+      <h3>Password: </h3><input type="password" name="newpassword" required><br><br>
+      <div style="width:40%; margin-left:30%; margin-right:30%"><div class="g-recaptcha" data-sitekey="6LdItHIbAAAAAJ0hElt7ea9zDtcUYb5y8u0CkV7f" style="text-align:center"></div></div><br><br>
+      <input type="submit" value="Sign Up">
+      <br><br><br>
+    </form>
+    <p>Already have an account? <a href="/login">Login</a></p>
+  </body>
+</html>
